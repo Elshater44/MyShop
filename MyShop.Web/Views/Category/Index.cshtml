@@ -1,0 +1,38 @@
+﻿@using MyShop.Entities.Models
+@model IEnumerable<Category>
+@{
+    ViewBag.PageTitle = "Category Management";
+    ViewBag.CardTitle = "View Categories";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<h3>Categories </h3>
+<table class="table table-hover w-100">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created Time</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>@category.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>
+                    <div class="d-flex gap-5">
+                        <a href="/Category/Edit/@category.Id" class="btn btn-warning">Edit</a>
+                        <a href="/Category/Delete/@category.Id" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Category/Create" class="btn btn-primary">Create New Category</a>

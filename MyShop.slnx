@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MyShop.DataAccess/MyShop.DataAccess.csproj" />
+  <Project Path="MyShop.Entities/MyShop.Entities.csproj" />
+  <Project Path="MyShop.Web/MyShop.Web.csproj" />
+</Solution>
